@@ -5,6 +5,7 @@
 //#include "chfs_protocol.h"
 #include "extent_client.h"
 #include <vector>
+using namespace std;
 
 
 class chfs_client {
@@ -39,7 +40,9 @@ class chfs_client {
   chfs_client();
   chfs_client(std::string, std::string);
 
+  
   bool isfile(inum);
+  bool issymlink(inum);
   bool isdir(inum);
 
   int getfile(inum, fileinfo &);
@@ -55,6 +58,8 @@ class chfs_client {
   int mkdir(inum , const char *, mode_t , inum &);
   
   /** you may need to add symbolic link related methods here.*/
+  int symlink(inum,const char*,const char*,inum& );
+  int readlink(inum, string&);
 };
 
 #endif 

@@ -54,7 +54,7 @@ class block_manager {
 #define IPB           1
 //(BLOCK_SIZE / sizeof(struct inode))
 
-// Block containing inode i
+// Block containing inode i [inode[i]在第IBLOCK()个block]
 #define IBLOCK(i, nblocks)     ((nblocks)/BPB + (i)/IPB + 3)
 
 // Bitmap bits per block
@@ -64,8 +64,8 @@ class block_manager {
 #define BBLOCK(b) ((b)/BPB + 2)
 
 #define NDIRECT 100
-#define NINDIRECT (BLOCK_SIZE / sizeof(uint))
-#define MAXFILE (NDIRECT + NINDIRECT)
+#define NINDIRECT (BLOCK_SIZE / sizeof(uint)) //=128
+#define MAXFILE (NDIRECT + NINDIRECT)//max file size = 228
 
 typedef struct inode {
   short type;
@@ -90,6 +90,8 @@ class inode_manager {
   void write_file(uint32_t inum, const char *buf, int size);
   void remove_file(uint32_t inum);
   void get_attr(uint32_t inum, extent_protocol::attr &a);
+
+  blockid_t get_inode_to_datablock(inode_t* ino, uint32_t n);
 };
 
 #endif
