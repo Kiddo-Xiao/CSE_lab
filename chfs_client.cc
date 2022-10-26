@@ -323,13 +323,8 @@ chfs_client::write(inum ino, size_t size, off_t off, const char *data,
     return r;
 }
 
-<<<<<<< HEAD
 // Your code here for Lab2A: add logging to ensure atomicity
 int chfs_client::unlink(inum parent,const char *name)
-=======
-int 
-chfs_client::unlink(inum parent,const char *name)
->>>>>>> lab1
 {
     int r = OK;
 
