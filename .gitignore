@@ -4,3 +4,6 @@ log/
 *.o
 *.d
 *.log
+/core
+*.tgz
+#core is too big for push

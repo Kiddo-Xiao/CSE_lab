@@ -21,7 +21,6 @@ using namespace std;
 chfs_client::chfs_client()
 {
     ec = new extent_client();
-
 }
 
 chfs_client::chfs_client(std::string extent_dst, std::string lock_dst)
@@ -62,7 +61,7 @@ chfs_client::isfile(inum inum)
         printf("isfile: %lld is a file\n", inum);
         return true;
     } 
-    printf("isfile: %lld is a dir\n", inum);
+    printf("isfile: %lld is not a file\n", inum);
     return false;
 }
 /** Your code here for Lab...
@@ -162,7 +161,8 @@ int
 chfs_client::setattr(inum ino, size_t size)
 {
     int r = OK;
-
+    uint64_t tx_id_;//code for lab2A
+    ec->begin(tx_id_);//code for lab2A
     /*
      * your code goes here.
      * note: get the content of inode ino, and modify its content
@@ -177,6 +177,7 @@ chfs_client::setattr(inum ino, size_t size)
     // otherwise the %string is extended and new characters are default-constructed. 
     // For basic types such as char, this means setting them to 0.
     ec->put(ino,buf);
+    ec->commit(tx_id_);//code for lab2A
     return r;
 }
 
@@ -185,22 +186,24 @@ int
 chfs_client::create(inum parent, const char *name, mode_t mode, inum &ino_out)
 {
     int r = OK;
-
+    uint64_t tx_id_;//code for lab2A
+    inum file_inum;//if exist, =file inum
     /*
      * your code goes here.
      * note: lookup is what you need to check if file exist;
      * after create file or dir, you must remember to modify the parent infomation.
      */
     bool found ;
-    inum file_inum;//if exist, =file inum
     string buf;
     lookup(parent, name, found, file_inum);
     if (found)return EXIST;
 
+    ec->begin(tx_id_);//code for lab2A
     ec->create(extent_protocol::T_FILE, ino_out);
     ec->get(parent, buf);
     buf.append(string(name) + ":" + filename(ino_out) + "/");// add a dir pair into parent dir
     ec->put(parent, buf);
+    ec->commit(tx_id_);//code for lab2A
     return r;
 }
 
@@ -209,7 +212,8 @@ int
 chfs_client::mkdir(inum parent, const char *name, mode_t mode, inum &ino_out)
 {
     int r = OK;
-
+    uint64_t tx_id_;//code for lab2A
+    ec->begin(tx_id_);//code for lab2A
     /*
      * your code goes here.
      * note: lookup is what you need to check if directory exist;
@@ -224,6 +228,7 @@ chfs_client::mkdir(inum parent, const char *name, mode_t mode, inum &ino_out)
     ec->get(parent, buf);
     buf.append(string(name) + ":" + filename(ino_out) + "/");
     ec->put(parent, buf);
+    ec->commit(tx_id_);//code for lab2A
     return r;
 }
 
@@ -307,7 +312,8 @@ chfs_client::write(inum ino, size_t size, off_t off, const char *data,
         size_t &bytes_written)
 {
     int r = OK;
-
+    uint64_t tx_id_;//code for lab2A
+    ec->begin(tx_id_);//code for lab2A
     /*
      * your code goes here.
      * note: write using ec->put().
@@ -320,6 +326,7 @@ chfs_client::write(inum ino, size_t size, off_t off, const char *data,
     for(int i=off;i<write_size;++i)buf[i]=data[i-off];
     bytes_written=size;
     ec->put(ino,buf);
+    ec->commit(tx_id_);//code for lab2A
     return r;
 }
 
@@ -327,7 +334,8 @@ chfs_client::write(inum ino, size_t size, off_t off, const char *data,
 int chfs_client::unlink(inum parent,const char *name)
 {
     int r = OK;
-
+    uint64_t tx_id_;//code for lab2A
+    ec->begin(tx_id_);//code for lab2A
     /*
      * your code goes here.
      * note: you should remove the file using ec->remove,
@@ -344,6 +352,7 @@ int chfs_client::unlink(inum parent,const char *name)
     int end = buf.find('/',sta);
     buf.erase(sta,end-sta+1);
     ec->put(parent,buf);
+    ec->commit(tx_id_);//code for lab2A
     return r;
 }
 
@@ -351,6 +360,8 @@ int
 chfs_client::symlink(inum parent, const char *name, const char *link, inum &ino_out)
 {
     int r = OK;
+    uint64_t tx_id_;//code for lab2A
+    ec->begin(tx_id_);//code for lab2A 
     bool found;
     string buf;
     inum file_inum;
@@ -362,6 +373,7 @@ chfs_client::symlink(inum parent, const char *name, const char *link, inum &ino_
     ec->get(parent, buf);
     buf.append(std::string(name) + ":" + filename(ino_out) + "/");
     ec->put(parent, buf);
+    ec->commit(tx_id_);//code for lab2A
     return r;
 }
 

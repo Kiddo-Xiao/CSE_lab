@@ -38,6 +38,7 @@ block_manager::alloc_block()
       return i;
     }
   }
+
   return 0;
 }
 
