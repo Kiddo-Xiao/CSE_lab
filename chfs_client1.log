@@ -1,0 +1,2079 @@
+	im: put_inode 1
+[extent_Server]初始化-------------------
+log_num = 0
+FUSE library version: 2.9.9
+unique: 2, opcode: INIT (26), nodeid: 0, insize: 56, pid: 0
+INIT: 7.32
+flags=0x03fffffb
+max_readahead=0x00020000
+   INIT: 7.19
+   flags=0x00000000
+   max_readahead=0x00020000
+   max_write=0x00020000
+   max_background=0
+   congestion_threshold=0
+   unique: 2, success, outsize: 40
+unique: 4, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+   unique: 4, error: -2 (No such file or directory), outsize: 16
+unique: 6, opcode: CREATE (35), nodeid: 1, insize: 63, pid: 15732
+extent_server: get 1
+extent_server: create inode
+	im: put_inode 2
+extent_server: get 1
+	im: put_inode 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 6, success, outsize: 160
+OK: create returns.
+unique: 8, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 8, error: -38 (Function not implemented), outsize: 16
+unique: 10, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 10, success, outsize: 120
+unique: 12, opcode: GETXATTR (22), nodeid: 2, insize: 68, pid: 15732
+   unique: 12, error: -38 (Function not implemented), outsize: 16
+unique: 14, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 14, success, outsize: 24
+unique: 16, opcode: FLUSH (25), nodeid: 2, insize: 64, pid: 15732
+   unique: 16, error: -38 (Function not implemented), outsize: 16
+unique: 18, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 18, success, outsize: 16
+unique: 20, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 20, success, outsize: 144
+unique: 22, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 22, success, outsize: 32
+unique: 24, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 24, error: -38 (Function not implemented), outsize: 16
+unique: 26, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 26, success, outsize: 120
+unique: 28, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 28, success, outsize: 120
+unique: 30, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 30, success, outsize: 616
+unique: 32, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 32, success, outsize: 120
+unique: 34, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 34, success, outsize: 16
+unique: 36, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 36, success, outsize: 144
+unique: 38, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 38, success, outsize: 32
+unique: 40, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 40, success, outsize: 120
+unique: 42, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 42, error: -38 (Function not implemented), outsize: 16
+unique: 44, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 44, success, outsize: 120
+unique: 46, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 46, success, outsize: 24
+unique: 48, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 48, success, outsize: 16
+unique: 50, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 50, success, outsize: 144
+unique: 52, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 52, success, outsize: 32
+unique: 54, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 54, error: -38 (Function not implemented), outsize: 16
+unique: 56, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 56, success, outsize: 120
+unique: 58, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 58, success, outsize: 120
+unique: 60, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 60, success, outsize: 616
+unique: 62, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 62, success, outsize: 120
+unique: 64, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 64, success, outsize: 16
+unique: 66, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 66, success, outsize: 144
+unique: 68, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 68, success, outsize: 32
+unique: 70, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 70, success, outsize: 120
+unique: 72, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 72, error: -38 (Function not implemented), outsize: 16
+unique: 74, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 74, success, outsize: 120
+unique: 76, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 76, success, outsize: 24
+unique: 78, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 78, success, outsize: 16
+unique: 80, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 80, success, outsize: 144
+unique: 82, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 82, success, outsize: 32
+unique: 84, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 84, error: -38 (Function not implemented), outsize: 16
+unique: 86, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 86, success, outsize: 120
+unique: 88, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 88, success, outsize: 120
+unique: 90, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 90, success, outsize: 616
+unique: 92, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 92, success, outsize: 120
+unique: 94, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 94, success, outsize: 16
+unique: 96, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 96, success, outsize: 144
+unique: 98, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 98, success, outsize: 32
+unique: 100, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 100, success, outsize: 120
+unique: 102, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 102, error: -38 (Function not implemented), outsize: 16
+unique: 104, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 104, success, outsize: 120
+unique: 106, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 106, success, outsize: 24
+unique: 108, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 108, success, outsize: 16
+unique: 110, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 110, success, outsize: 144
+unique: 112, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 112, success, outsize: 32
+unique: 114, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 114, error: -38 (Function not implemented), outsize: 16
+unique: 116, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 116, success, outsize: 120
+unique: 118, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 118, success, outsize: 120
+unique: 120, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 120, success, outsize: 616
+unique: 122, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 122, success, outsize: 120
+unique: 124, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 124, success, outsize: 16
+unique: 126, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 126, success, outsize: 144
+unique: 128, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 128, success, outsize: 32
+unique: 130, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 130, success, outsize: 120
+unique: 132, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 132, error: -38 (Function not implemented), outsize: 16
+unique: 134, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 134, success, outsize: 120
+unique: 136, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 136, success, outsize: 24
+unique: 138, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 138, success, outsize: 16
+unique: 140, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 140, success, outsize: 144
+unique: 142, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 142, success, outsize: 32
+unique: 144, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 144, error: -38 (Function not implemented), outsize: 16
+unique: 146, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 146, success, outsize: 120
+unique: 148, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 148, success, outsize: 120
+unique: 150, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 150, success, outsize: 616
+unique: 152, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 152, success, outsize: 120
+unique: 154, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 154, success, outsize: 16
+unique: 156, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 156, success, outsize: 144
+unique: 158, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 158, success, outsize: 32
+unique: 160, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 160, success, outsize: 120
+unique: 162, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 162, error: -38 (Function not implemented), outsize: 16
+unique: 164, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 164, success, outsize: 120
+unique: 166, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 166, success, outsize: 24
+unique: 168, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 168, success, outsize: 16
+unique: 170, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 170, success, outsize: 144
+unique: 172, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 172, success, outsize: 32
+unique: 174, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 174, error: -38 (Function not implemented), outsize: 16
+unique: 176, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 176, success, outsize: 120
+unique: 178, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 178, success, outsize: 120
+unique: 180, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 180, success, outsize: 616
+unique: 182, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 182, success, outsize: 120
+unique: 184, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 184, success, outsize: 16
+unique: 186, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 186, success, outsize: 144
+unique: 188, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 188, success, outsize: 32
+unique: 190, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 190, success, outsize: 120
+unique: 192, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 192, error: -38 (Function not implemented), outsize: 16
+unique: 194, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 194, success, outsize: 120
+unique: 196, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 196, success, outsize: 24
+unique: 198, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 198, success, outsize: 16
+unique: 200, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 200, success, outsize: 144
+unique: 202, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 202, success, outsize: 32
+unique: 204, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 204, error: -38 (Function not implemented), outsize: 16
+unique: 206, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 206, success, outsize: 120
+unique: 208, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 208, success, outsize: 120
+unique: 210, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 210, success, outsize: 616
+unique: 212, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 212, success, outsize: 120
+unique: 214, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 214, success, outsize: 16
+unique: 216, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 216, success, outsize: 144
+unique: 218, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 218, success, outsize: 32
+unique: 220, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 220, success, outsize: 120
+unique: 222, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 222, error: -38 (Function not implemented), outsize: 16
+unique: 224, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 224, success, outsize: 120
+unique: 226, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 226, success, outsize: 24
+unique: 228, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 228, success, outsize: 16
+unique: 230, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 230, success, outsize: 144
+unique: 232, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 232, success, outsize: 32
+unique: 234, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 234, error: -38 (Function not implemented), outsize: 16
+unique: 236, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 236, success, outsize: 120
+unique: 238, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 238, success, outsize: 120
+unique: 240, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 240, success, outsize: 616
+unique: 242, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 242, success, outsize: 120
+unique: 244, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 244, success, outsize: 16
+unique: 246, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 246, success, outsize: 144
+unique: 248, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 248, success, outsize: 32
+unique: 250, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 250, success, outsize: 120
+unique: 252, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 252, error: -38 (Function not implemented), outsize: 16
+unique: 254, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 254, success, outsize: 120
+unique: 256, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 256, success, outsize: 24
+unique: 258, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 258, success, outsize: 16
+unique: 260, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 260, success, outsize: 144
+unique: 262, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 262, success, outsize: 32
+unique: 264, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 264, error: -38 (Function not implemented), outsize: 16
+unique: 266, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 266, success, outsize: 120
+unique: 268, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 268, success, outsize: 120
+unique: 270, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 270, success, outsize: 616
+unique: 272, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 272, success, outsize: 120
+unique: 274, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 274, success, outsize: 16
+unique: 276, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 276, success, outsize: 144
+unique: 278, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 278, success, outsize: 32
+unique: 280, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 280, success, outsize: 120
+unique: 282, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 282, error: -38 (Function not implemented), outsize: 16
+unique: 284, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 284, success, outsize: 120
+unique: 286, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 286, success, outsize: 24
+unique: 288, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 288, success, outsize: 16
+unique: 290, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 290, success, outsize: 144
+unique: 292, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 292, success, outsize: 32
+unique: 294, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 294, error: -38 (Function not implemented), outsize: 16
+unique: 296, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 296, success, outsize: 120
+unique: 298, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 298, success, outsize: 120
+unique: 300, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 300, success, outsize: 616
+unique: 302, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 302, success, outsize: 120
+unique: 304, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 304, success, outsize: 16
+unique: 306, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 306, success, outsize: 144
+unique: 308, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 308, success, outsize: 32
+unique: 310, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 310, success, outsize: 120
+unique: 312, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 312, error: -38 (Function not implemented), outsize: 16
+unique: 314, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 314, success, outsize: 120
+unique: 316, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 316, success, outsize: 24
+unique: 318, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 318, success, outsize: 16
+unique: 320, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 320, success, outsize: 144
+unique: 322, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 322, success, outsize: 32
+unique: 324, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 324, error: -38 (Function not implemented), outsize: 16
+unique: 326, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 326, success, outsize: 120
+unique: 328, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 328, success, outsize: 120
+unique: 330, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 330, success, outsize: 616
+unique: 332, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 332, success, outsize: 120
+unique: 334, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 334, success, outsize: 16
+unique: 336, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 336, success, outsize: 144
+unique: 338, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 338, success, outsize: 32
+unique: 340, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 340, success, outsize: 120
+unique: 342, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 342, error: -38 (Function not implemented), outsize: 16
+unique: 344, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 344, success, outsize: 120
+unique: 346, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 346, success, outsize: 24
+unique: 348, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 348, success, outsize: 16
+unique: 350, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 350, success, outsize: 144
+unique: 352, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 352, success, outsize: 32
+unique: 354, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 354, error: -38 (Function not implemented), outsize: 16
+unique: 356, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 356, success, outsize: 120
+unique: 358, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 358, success, outsize: 120
+unique: 360, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 360, success, outsize: 616
+unique: 362, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 362, success, outsize: 120
+unique: 364, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 364, success, outsize: 16
+unique: 366, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 366, success, outsize: 144
+unique: 368, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 368, success, outsize: 32
+unique: 370, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 370, success, outsize: 120
+unique: 372, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 372, error: -38 (Function not implemented), outsize: 16
+unique: 374, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 374, success, outsize: 120
+unique: 376, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 376, success, outsize: 24
+unique: 378, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 378, success, outsize: 16
+unique: 380, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 380, success, outsize: 144
+unique: 382, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 382, success, outsize: 32
+unique: 384, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 384, error: -38 (Function not implemented), outsize: 16
+unique: 386, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 386, success, outsize: 120
+unique: 388, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 388, success, outsize: 120
+unique: 390, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 390, success, outsize: 616
+unique: 392, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 392, success, outsize: 120
+unique: 394, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 394, success, outsize: 16
+unique: 396, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 396, success, outsize: 144
+unique: 398, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 398, success, outsize: 32
+unique: 400, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 400, success, outsize: 120
+unique: 402, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 402, error: -38 (Function not implemented), outsize: 16
+unique: 404, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 404, success, outsize: 120
+unique: 406, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 406, success, outsize: 24
+unique: 408, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 408, success, outsize: 16
+unique: 410, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 410, success, outsize: 144
+unique: 412, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 412, success, outsize: 32
+unique: 414, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 414, error: -38 (Function not implemented), outsize: 16
+unique: 416, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 416, success, outsize: 120
+unique: 418, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 418, success, outsize: 120
+unique: 420, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 420, success, outsize: 616
+unique: 422, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 422, success, outsize: 120
+unique: 424, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 424, success, outsize: 16
+unique: 426, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 426, success, outsize: 144
+unique: 428, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 428, success, outsize: 32
+unique: 430, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 430, success, outsize: 120
+unique: 432, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 432, error: -38 (Function not implemented), outsize: 16
+unique: 434, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 434, success, outsize: 120
+unique: 436, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 436, success, outsize: 24
+unique: 438, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 438, success, outsize: 16
+unique: 440, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 440, success, outsize: 144
+unique: 442, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 442, success, outsize: 32
+unique: 444, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 444, error: -38 (Function not implemented), outsize: 16
+unique: 446, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 446, success, outsize: 120
+unique: 448, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 448, success, outsize: 120
+unique: 450, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 450, success, outsize: 616
+unique: 452, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 452, success, outsize: 120
+unique: 454, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 454, success, outsize: 16
+unique: 456, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 456, success, outsize: 144
+unique: 458, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 458, success, outsize: 32
+unique: 460, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 460, success, outsize: 120
+unique: 462, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 462, error: -38 (Function not implemented), outsize: 16
+unique: 464, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 464, success, outsize: 120
+unique: 466, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 466, success, outsize: 24
+unique: 468, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 468, success, outsize: 16
+unique: 470, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 470, success, outsize: 144
+unique: 472, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 472, success, outsize: 32
+unique: 474, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 474, error: -38 (Function not implemented), outsize: 16
+unique: 476, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 476, success, outsize: 120
+unique: 478, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 478, success, outsize: 120
+unique: 480, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 480, success, outsize: 616
+unique: 482, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 482, success, outsize: 120
+unique: 484, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 484, success, outsize: 16
+unique: 486, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 486, success, outsize: 144
+unique: 488, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 488, success, outsize: 32
+unique: 490, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 490, success, outsize: 120
+unique: 492, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 492, error: -38 (Function not implemented), outsize: 16
+unique: 494, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 494, success, outsize: 120
+unique: 496, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 496, success, outsize: 24
+unique: 498, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 498, success, outsize: 16
+unique: 500, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 500, success, outsize: 144
+unique: 502, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 502, success, outsize: 32
+unique: 504, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 504, error: -38 (Function not implemented), outsize: 16
+unique: 506, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 506, success, outsize: 120
+unique: 508, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 508, success, outsize: 120
+unique: 510, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 510, success, outsize: 616
+unique: 512, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 512, success, outsize: 120
+unique: 514, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 514, success, outsize: 16
+unique: 516, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 516, success, outsize: 144
+unique: 518, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 518, success, outsize: 32
+unique: 520, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 520, success, outsize: 120
+unique: 522, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 522, error: -38 (Function not implemented), outsize: 16
+unique: 524, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 524, success, outsize: 120
+unique: 526, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 526, success, outsize: 24
+unique: 528, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 528, success, outsize: 16
+unique: 530, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 530, success, outsize: 144
+unique: 532, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 532, success, outsize: 32
+unique: 534, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 534, error: -38 (Function not implemented), outsize: 16
+unique: 536, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 536, success, outsize: 120
+unique: 538, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 538, success, outsize: 120
+unique: 540, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 540, success, outsize: 616
+unique: 542, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 542, success, outsize: 120
+unique: 544, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 544, success, outsize: 16
+unique: 546, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 546, success, outsize: 144
+unique: 548, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 548, success, outsize: 32
+unique: 550, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 550, success, outsize: 120
+unique: 552, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 552, error: -38 (Function not implemented), outsize: 16
+unique: 554, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 554, success, outsize: 120
+unique: 556, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 556, success, outsize: 24
+unique: 558, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 558, success, outsize: 16
+unique: 560, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 560, success, outsize: 144
+unique: 562, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 562, success, outsize: 32
+unique: 564, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 564, error: -38 (Function not implemented), outsize: 16
+unique: 566, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 566, success, outsize: 120
+unique: 568, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 568, success, outsize: 120
+unique: 570, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 570, success, outsize: 616
+unique: 572, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 572, success, outsize: 120
+unique: 574, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 574, success, outsize: 16
+unique: 576, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 576, success, outsize: 144
+unique: 578, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 578, success, outsize: 32
+unique: 580, opcode: SETATTR (4), nodeid: 2, insize: 128, pid: 15732
+fuseserver_setattr 0x8
+   fuseserver_setattr set size to 0
+extent_server: get 2
+	im: put_inode 2
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 580, success, outsize: 120
+unique: 582, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 582, error: -38 (Function not implemented), outsize: 16
+unique: 584, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 0
+   getattr -> 0
+   unique: 584, success, outsize: 120
+unique: 586, opcode: WRITE (16), nodeid: 2, insize: 680, pid: 15732
+extent_server: get 2
+	im: put_inode 2
+   unique: 586, success, outsize: 24
+unique: 588, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 588, success, outsize: 16
+unique: 590, opcode: LOOKUP (1), nodeid: 1, insize: 47, pid: 15732
+extent_server: get 1
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 590, success, outsize: 144
+unique: 592, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 15732
+   unique: 592, success, outsize: 32
+unique: 594, opcode: IOCTL (39), nodeid: 2, insize: 72, pid: 15732
+   unique: 594, error: -38 (Function not implemented), outsize: 16
+unique: 596, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 596, success, outsize: 120
+unique: 598, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 598, success, outsize: 120
+unique: 600, opcode: READ (15), nodeid: 2, insize: 80, pid: 15732
+extent_server: get 2
+   unique: 600, success, outsize: 616
+unique: 602, opcode: GETATTR (3), nodeid: 2, insize: 56, pid: 15732
+extent_server: getattr 2
+isfile: 2 is a file
+getattr 0000000000000002 1
+extent_server: getattr 2
+isfile: 2 is a file
+getfile 0000000000000002
+extent_server: getattr 2
+getfile 0000000000000002 -> sz 600
+   getattr -> 600
+   unique: 602, success, outsize: 120
+unique: 604, opcode: RELEASE (18), nodeid: 2, insize: 64, pid: 0
+   unique: 604, success, outsize: 16
+unique: 606, opcode: OPENDIR (27), nodeid: 1, insize: 48, pid: 15732
+   unique: 606, success, outsize: 32
+unique: 608, opcode: GETATTR (3), nodeid: 1, insize: 56, pid: 15732
+extent_server: getattr 1
+isfile: 1 is not a file
+getattr 0000000000000001 0
+extent_server: getattr 1
+isfile: 1 is not a file
+extent_server: getattr 1
+isdir: 1 is a dir
+getdir 0000000000000001
+extent_server: getattr 1
+   getattr -> 1667112001 1667112001 1667112001
+   unique: 608, success, outsize: 120
+unique: 610, opcode: READDIR (28), nodeid: 1, insize: 80, pid: 15732
+fuseserver_readdir
+extent_server: getattr 1
+isdir: 1 is a dir
+extent_server: get 1
+   unique: 610, success, outsize: 48
+unique: 612, opcode: READDIR (28), nodeid: 1, insize: 80, pid: 15732
+fuseserver_readdir
+extent_server: getattr 1
+isdir: 1 is a dir
+extent_server: get 1
+   unique: 612, success, outsize: 16
+unique: 614, opcode: RELEASEDIR (29), nodeid: 1, insize: 64, pid: 0
+   unique: 614, success, outsize: 16
+fuse: failed to unmount /home/stu/cse-lab/chfs1: Invalid argument

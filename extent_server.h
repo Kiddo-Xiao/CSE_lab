@@ -21,6 +21,7 @@ class extent_server {
 #endif
   inode_manager *im;
   chfs_persister *_persister;
+  uint64_t tx_id;//事务id
 
  public:
   extent_server();
@@ -32,6 +33,8 @@ class extent_server {
   int remove(extent_protocol::extentid_t id, int &);
 
   // Your code here for lab2A: add logging APIs
+  int begin(uint64_t &tx_id_);
+  int commit(uint64_t tx_id_);
 };
 
 #endif 
