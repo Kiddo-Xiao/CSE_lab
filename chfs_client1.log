@@ -1,3 +1,0 @@
-	im: put_inode 1
-fusermount: mounting over filesystem type 0x01021997 is forbidden
-fuse_mount failed
