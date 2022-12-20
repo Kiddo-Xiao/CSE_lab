@@ -45,16 +45,59 @@ private:
 
 
 // Your code here -- RPC handlers for the worker to call.
-
-mr_protocol::status Coordinator::askTask(int, mr_protocol::AskTaskResponse &reply) {
-	// Lab4 : Your code goes here.
-
+mr_protocol::status Coordinator::askTask(int id, mr_protocol::AskTaskResponse &reply) {
+	// Lab2 : Your code goes here.
+    //check the status of map task index.
+    if (!isFinishedMap()) {
+        int file_size = files.size();
+        this->mtx.lock();
+        for (int i = 0; i < file_size; i++) {
+            if (mapTasks[i].isCompleted || mapTasks[i].isAssigned) continue;
+            mapTasks[i].isAssigned = true;
+            this->mtx.unlock();
+            reply.filename = getFile(i);
+            reply.answer = MAP;
+			reply.mapId = i;
+            return mr_protocol::OK;
+        }
+        this->mtx.unlock();
+    }
+    else if (!isFinishedReduce()) {
+        for (int i = 0; i < REDUCER_COUNT; i++) {
+            this->mtx.lock();
+            if ((!reduceTasks[i].isAssigned) && (!reduceTasks[i].isCompleted)) {
+                reduceTasks[i].isAssigned = true;
+                this->mtx.unlock();
+                reply.reduceId = i;
+                reply.answer = REDUCE;
+                return mr_protocol::OK;
+            }
+            this->mtx.unlock();
+        }
+    }
+    reply.answer = NONE;
 	return mr_protocol::OK;
 }
 
 mr_protocol::status Coordinator::submitTask(int taskType, int index, bool &success) {
-	// Lab4 : Your code goes here.
-
+	// Lab2 : Your code goes here.
+    if (taskType == MAP) {
+        this->mtx.lock();
+        if (mapTasks[index].isCompleted != true) {
+            mapTasks[index].isCompleted = true;
+            completedMapCount++;
+        }
+        this->mtx.unlock();
+    }
+    else if (taskType == REDUCE){
+        this->mtx.lock();
+        if (reduceTasks[index].isCompleted != true) {
+            reduceTasks[index].isCompleted = true;
+            completedReduceCount++;
+        }
+        this->mtx.unlock();
+    }
+    success = true;
 	return mr_protocol::OK;
 }
 
@@ -101,8 +144,7 @@ bool Coordinator::Done() {
 // create a Coordinator.
 // nReduce is the number of reduce tasks to use.
 //
-Coordinator::Coordinator(const vector<string> &files, int nReduce)
-{
+Coordinator::Coordinator(const vector<string> &files, int nReduce) {
 	this->files = files;
 	this->isFinished = false;
 	this->completedMapCount = 0;
@@ -138,6 +180,7 @@ int main(int argc, char *argv[])
 	char **p = &argv[2];
 	while (*p) {
 		files.push_back(string(*p));
+		cout << "fffff" << string(*p) << endl;
 		++p;
 	}
 
@@ -146,9 +189,11 @@ int main(int argc, char *argv[])
 	Coordinator c(files, REDUCER_COUNT);
 	
 	//
-	// Lab4: Your code here.
+	// Lab2: Your code here.
 	// Hints: Register "askTask" and "submitTask" as RPC handlers here
-	// 
+	//
+    server.reg(mr_protocol::asktask, &c, &Coordinator::askTask);
+    server.reg(mr_protocol::submittask, &c, &Coordinator::submitTask);
 
 	while(!c.Done()) {
 		sleep(1);
@@ -156,5 +201,4 @@ int main(int argc, char *argv[])
 
 	return 0;
 }
-
 

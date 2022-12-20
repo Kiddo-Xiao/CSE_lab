@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <dirent.h>
-
+#include <fstream>
 #include <mutex>
 #include <string>
 #include <vector>
@@ -16,6 +16,8 @@
 #include "mr_protocol.h"
 
 using namespace std;
+
+#define is_valid(c) (c >= 'a' && c <= 'z') || (c >='A' && c <= 'Z')
 
 struct KeyVal {
     string key;
@@ -32,7 +34,24 @@ struct KeyVal {
 vector<KeyVal> Map(const string &filename, const string &content)
 {
 	// Copy your code from mr_sequential.cc here.
-
+    // Your code goes here
+    // Hints: split contents into an array of words.
+    string tmp_str = "";
+    vector<KeyVal> ans_vector;
+    for (int i = 0; i < content.size(); i++) {
+        char current_char = content[i];
+        if (is_valid(current_char)) tmp_str += current_char;
+        else {
+            if (tmp_str != "") {
+                KeyVal a;
+                a.key = tmp_str;
+                a.val = "1";
+                ans_vector.push_back(a);
+            }
+            tmp_str = "";
+        }
+    }
+    return ans_vector;
 }
 
 //
@@ -43,7 +62,9 @@ vector<KeyVal> Map(const string &filename, const string &content)
 string Reduce(const string &key, const vector < string > &values)
 {
     // Copy your code from mr_sequential.cc here.
-
+    int ans = 0;
+    for (int i = 0; i < values.size(); i++) ans += atoi(values[i].c_str());
+    return to_string(ans);
 }
 
 
@@ -87,18 +108,59 @@ Worker::Worker(const string &dst, const string &dir, MAPF mf, REDUCEF rf)
 
 void Worker::doMap(int index, const vector<string> &filenames)
 {
-	// Lab4: Your code goes here.
+	// Lab2: Your code goes here.
+    vector <KeyVal> ans_kv;
+    for (int i = 0; i < filenames.size(); i++) {
+        string filename = filenames[i];
+        string content;
+        getline(ifstream(filename), content, '\0');
+        vector<KeyVal> tmp_kv = mapf(filename, content);
+        for (int j = 0; j < tmp_kv.size(); j++)ans_kv.push_back(tmp_kv[j]);
+    }
+    ofstream out_files[REDUCER_COUNT];
+    for (int i = 0; i < REDUCER_COUNT; i++) {
+        out_files[i].open("mr-" + to_string(index) + "-" + to_string(i) + ".txt");
+    }
 
+    for (int i = 0; i < ans_kv.size(); i++) {
+        string k = ans_kv[i].key;
+        string v = ans_kv[i].val;
+        int hash_ans = (k[0] % REDUCER_COUNT);
+        out_files[hash_ans] << k << " "<< v << '\n';
+    }
+    for (int i = 0; i < REDUCER_COUNT; i++) {
+        out_files[i].close();
+    }
 }
 
-void Worker::doReduce(int index)
-{
-	// Lab4: Your code goes here.
-
+void Worker::doReduce(int index) {
+	// Lab2: Your code goes here.
+    map<string, int> ans_map;
+    for (int i = 0; i <= 5; i++) {
+        ifstream in;
+        string file_path = "mr-" + to_string(i) + '-' + to_string(index) + ".txt";
+        in.open(file_path, ios::in);
+        string content;
+        getline(in, content, '\0');
+        if (content == "")  continue;
+        stringstream ss(content);
+        string str, times;
+        while(ss >> str >> times){
+            map<string, int>::iterator it = ans_map.find(str);
+            if(it != ans_map.end()) ans_map[str]++;
+            else ans_map[str] = 1;
+        }
+    }
+    string content;
+    for (const pair<string, int> &keyVal: ans_map) {
+        content += keyVal.first + ' ' + to_string(keyVal.second) + '\n';
+    }
+    ofstream out(basedir + "mr-out", ios::out | ios::app);
+    out << content << endl;
+    out.close();
 }
 
-void Worker::doSubmit(mr_tasktype taskType, int index)
-{
+void Worker::doSubmit(mr_tasktype taskType, int index) {
 	bool b;
 	mr_protocol::status ret = this->cl->call(mr_protocol::submittask, taskType, index, b);
 	if (ret != mr_protocol::OK) {
@@ -109,16 +171,30 @@ void Worker::doSubmit(mr_tasktype taskType, int index)
 
 void Worker::doWork()
 {
+    //
+    // Lab2: Your code goes here.
+    // Hints: send asktask RPC call to coordinator
+    // if mr_tasktype::MAP, then doMap and doSubmit
+    // if mr_tasktype::REDUCE, then doReduce and doSubmit
+    // if mr_tasktype::NONE, meaning currently no work is needed, then sleep
+    //
 	for (;;) {
-
-		//
-		// Lab4: Your code goes here.
-		// Hints: send asktask RPC call to coordinator
-		// if mr_tasktype::MAP, then doMap and doSubmit
-		// if mr_tasktype::REDUCE, then doReduce and doSubmit
-		// if mr_tasktype::NONE, meaning currently no work is needed, then sleep
-		//
-
+        mr_protocol::AskTaskResponse reply;
+        mr_protocol::status  r = cl->call(mr_protocol::asktask, cl->id(), reply);
+        mr_tasktype ans = (mr_tasktype)reply.answer;
+        if (ans == mr_tasktype::NONE) {
+            sleep(0.1);
+        }
+        else if (ans == mr_tasktype::REDUCE) {
+            doReduce(reply.reduceId);
+            doSubmit(REDUCE, reply.reduceId);
+        }
+        else if (ans == mr_tasktype::MAP) {
+            vector<string> filenames;
+            filenames.push_back(reply.filename);
+            doMap(reply.mapId, filenames);
+            doSubmit(MAP, reply.mapId);
+        }
 	}
 }
 
@@ -137,4 +213,3 @@ int main(int argc, char **argv)
 
 	return 0;
 }
-

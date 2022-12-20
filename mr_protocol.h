@@ -26,22 +26,43 @@ public:
 	};
 
 	struct AskTaskResponse {
-		// Lab4: Your definition here.
+		// Lab2: Your definition here.
+        string filename;
+		int answer;
+        int reduceId;
+        int mapId;
 	};
 
 	struct AskTaskRequest {
-		// Lab4: Your definition here.
+		// Lab2: Your definition here.
 	};
 
 	struct SubmitTaskResponse {
-		// Lab4: Your definition here.
+		// Lab2: Your definition here.
 	};
 
 	struct SubmitTaskRequest {
-		// Lab4: Your definition here.
+		// Lab2: Your definition here.
 	};
 
 };
 
-#endif
+inline unmarshall & operator>>(unmarshall &u, mr_protocol::AskTaskResponse &a)
+{
+    u >> a.answer;
+    u >> a.filename;
+    u >> a.reduceId;
+    u >> a.mapId;
+    return u;
+}
 
+inline marshall & operator<<(marshall &m, mr_protocol::AskTaskResponse a)
+{
+    m << a.answer;
+    m << a.filename;
+    m << a.reduceId;
+    m << a.mapId;
+    return m;
+}
+
+#endif

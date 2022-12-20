@@ -8,8 +8,12 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <map>
 
 using namespace std;
+
+#define is_valid(c) (c >= 'a' && c <= 'z') || (c >='A' && c <= 'Z')
+
 
 typedef struct {
     string key;
@@ -24,11 +28,27 @@ KeyVal;
 // and look only at the contents argument. The return value is a slice
 // of key/value pairs.
 //
-vector<KeyVal> Map(const string &filename, const string &content)
-{
+vector <KeyVal> Map(const string &filename, const string &content) {
     // Your code goes here
     // Hints: split contents into an array of words.
-
+    string str;
+    vector <KeyVal> key_values;
+    map<std::string, int> get_map;
+    
+    for (char i:content) {
+        if (is_valid(i)) str += i;
+        else if (str.size() > 0) {
+            get_map[str] += 1;
+            str = "";
+        }
+    }
+    for (auto i = get_map.begin(); i != get_map.end(); i++) {
+        KeyVal kv; 
+        kv.key = i->first; 
+        kv.val = to_string(i->second);
+        key_values.push_back(kv);
+    }
+    return key_values;
 }
 
 //
@@ -36,15 +56,15 @@ vector<KeyVal> Map(const string &filename, const string &content)
 // map tasks, with a list of all the values created for that key by
 // any map task.
 //
-string Reduce(const string &key, const vector <string> &values)
-{
+string Reduce(const string &key, const vector <string> &values) {
     // Your code goes here
     // Hints: return the number of occurrences of the word.
-
+    unsigned long long sum = 0;
+    for (const string &v:values) sum += atoll(v.c_str());
+    return to_string(sum);
 }
 
-int main(int argc, char ** argv)
-{
+int main(int argc, char **argv) {
     if (argc < 2) {
         cout << "Usage: mrsequential inputfiles...\n";
         exit(1);
@@ -80,9 +100,9 @@ int main(int argc, char ** argv)
     //
 
     sort(intermediate.begin(), intermediate.end(),
-    	[](KeyVal const & a, KeyVal const & b) {
-		return a.key < b.key;
-	});
+         [](KeyVal const &a, KeyVal const &b) {
+             return a.key < b.key;
+         });
 
     //
     // call Reduce on each distinct key in intermediate[],
@@ -94,7 +114,7 @@ int main(int argc, char ** argv)
         for (; j < intermediate.size() && intermediate[j].key == intermediate[i].key;)
             j++;
 
-        vector < string > values;
+        vector <string> values;
         for (unsigned int k = i; k < j; k++) {
             values.push_back(intermediate[k].val);
         }
@@ -106,4 +126,3 @@ int main(int argc, char ** argv)
     }
     return 0;
 }
-
