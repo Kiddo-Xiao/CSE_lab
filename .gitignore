@@ -5,4 +5,5 @@ log/
 *.d
 *.log
 .clang-format
+core
 raft_temp/
