@@ -91,7 +91,6 @@ class inode_manager {
   void remove_file(uint32_t inum);
   void get_attr(uint32_t inum, extent_protocol::attr &a);
 
-  blockid_t get_inode_to_datablock(inode_t* ino, uint32_t n);
 };
 
 #endif
