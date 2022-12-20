@@ -71,4 +71,6 @@ private:
     std::mutex mtx;
     // Lab3: Your code here
     // You can add your own variables and functions here if you want.
+public:
+    int num_append_logs = 0;
 };
